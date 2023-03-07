@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Upright&family=Cormorant+SC:wght@600&family=Caveat&family=Grape+Nuts&family=Kalam&family=Montserrat:wght@200;400;700&family=Signika:wght@400;700&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <script src="https://kit.fontawesome.com/1f8e79f6df.js" crossorigin="anonymous"></script>
 </head>
 
@@ -24,13 +25,19 @@
         <h2>Katarzyna Trzeciakiewicz</h2>
       </div>
       <div class="nav_items">
-        <a href="#" class="nav__home nav-btn link">Home</a>
-        <a href="#about-me" class="nav__about-me nav-btn link">O mnie</a>
-        <a href="#offer" class="nav__offer nav-btn link">Zakres pomocy</a>
-        <a href="#contact" class="nav__contact nav-btn link">Kontakt</a>
+        <a href="#" class="nav_home">Home</a>
+        <a href="#about-me" class="nav_about-me">O mnie</a>
+        <a href="#offer" class="nav_offer">Zakres pomocy</a>
+        <a href="#contact" class="nav_contact">Kontakt</a>
       </div>
     </nav>
-    <nav class="nav-mobile"></nav>
+    <nav class="nav-mobile">
+      <button class="hamburger hamburger--spring" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+    </nav>
 
     <div class="header_top">
       <div class="header_heading">
@@ -44,18 +51,121 @@
     </div>
     <div class="header_bottom">
       <div class="header_arrow"><i class="fa-solid fa-chevron-down"></i></div>
-      <button class="header_btn">Uzyskaj pomoc</button>
+      <a href='#about-me' class="header_btn">Uzyskaj pomoc</a>
     </div>
   </header>
 
   <main>
-    <section class="about-me"></section>
+    <section id='about-me' class="about-me">
+      <div class="wrapper">
+        <h2 class="section-heading">o mnie</h2>
+        <div class="about-me_box">
+          <img src="./src/img/Kasia.jpeg" alt="Katarzyna Trzeciakiewicz">
+          <div class="about-me_text">
+            <div class="carousel">
+              <div class="text-card">
+                <h3>Kim jestem?</h3>
+                <p>Jestem psychologiem i psychoterapeutką pracującą w nurcie psychodynamicznym, który zakłada wpływ
+                  nieświadomych mechanizmów działania na życie człowieka. Specjalizuję się w prowadzeniu psychoterapii
+                  indywidualnej osób dorosłych i młodzieży w obszarze trudności emocjonalnych, depresji, lęków, zaburzeń
+                  nerwicowych, zaburzeń zachowania i zaburzeń osobowości. Pomagam pacjentom z problemami wynikającymi z
+                  kryzysów rozwojowych i adaptacyjnych.</p>
+              </div>
+              <div class="text-card">
+                <h3>Wykształcenie</h3>
+                <p>Wiedzę i doświadczenie zdobywałam podczas studiów psychologicznych ukończonych na Uniwersytecie
+                  Wrocławskim. Obecnie jestem w trakcie procesu certyfikacji w Szkole Psychoterapii w Krakowskim Centrum
+                  Psychodynamicznym, rekomendowanym przez Polskie Towarzystwo Psychologiczne. Ukończyłam także Studium
+                  Socjoterapii i Psychoterapii Młodzieży..</p>
+              </div>
+              <div class="text-card">
+                <h3>Doświadczenie</h3>
+                <p>W przeszłości byłam związana z Centrum Psychoterapii Consilia i Centrum Psyche a także Ośrodkiem
+                  Profilaktyki Środowiskowej Fundacji &quot;Praesterno&quot;, gdzie prowadziłam socjoterapię,
+                  konsultacje
+                  psychologiczne, psychoterapię młodzieży i osób dorosłych. Obecnie prowadzę psychoterapię oraz
+                  konsultacje w gabinecie prywatnym. Współpracuję również z innymi specjalistami z zakresu
+                  psychoterapii,
+                  terapii rodzin oraz psychiatrii. Kompetencje zawodowe rozwijam uczestnicząc w szkoleniach i
+                  konferencjach naukowych a swoją pracę poddaję regularnej superwizji. Jestem również członkiem
+                  Polskiego
+                  Towarzystwa Psychoterapii Psychodynamicznej.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-me_cards">
+          <div class="about-me_card">
+            <h3 class="card-text">Terapia osób dorosłych</h3>
+            <img class='card-img' src="./src/img/terapia-dorosłych.webp" alt="terapia osób dorosłych">
+          </div>
+          <div class="about-me_card">
+            <h3 class="card-text">Terapia młodzieży</h3>
+            <img class='card-img' src="./src/img/terapia-dzieci.webp" alt="terapia osób młodzieży">
+          </div>
+        </div>
+      </div>
+      <div class="hero-graphic hero-offer">
+        <h3>W czym mogę Ci pomóc?</h3>
+      </div>
+    </section>
+
+    <section id="offer" class="offer">
+      <div class="wrapper">
+        <h2 class="section-heading">zakres pomocy</h2>
+        <div class="offer_intro">
+          <p><span class="bold">Psychoterapia</span> jest procesem służącym zmianie wewnętrznej, a także prowadzącym do
+            podniesienia jakości życia. Pozwala uważnie przyjrzeć się sobie i swoim problemom, oraz
+            odnaleźć dla nich rozwiązania. Jest to proces czasami powolny i długotrwały, który zmierza do
+            trwałej poprawy w funkcjonowaniu oraz zmianie jakości życia.</p>
+        </div>
+        <h3 class="offer_heading">Obszary w których możesz zmagać się z trudnościami:</h3>
+        <div class="offer_areas">
+          <div class="area-box">
+            <div class="offer_area">
+              <h4>obszar relacji</h4>
+            </div>
+            <p>nadmierna powściągliwość w kontaktach z innymi, trudność w budowaniu i
+              utrzymaniu trwałych relacji bliskich i intymnych, niestabilne i burzliwie przebiegające związki</p>
+          </div>
+          <div class="area-box">
+            <div class="offer_area">
+              <h4>obszar emocji</h4>
+            </div>
+            <p>drażliwość, częste wybuchy złości, utrzymujące się poczucie gniewu, nadmierne
+              okazywanie emocji, stany obniżonego nastroju</p>
+          </div>
+          <div class="area-box">
+            <div class="offer_area">
+              <h4>obszar zawodowy</h4>
+            </div>
+            <p>łamanie zasad zachowań w pracy, trudność w utrzymaniu pracy w dłuższej
+              perspektywie czasu, brak czerpania satysfakcji z wykonywanych obowiązków</p>
+          </div>
+          <div class="area-box">
+            <div class="offer_area">
+              <h4>obszar zachowań</h4>
+            </div>
+            <p>działania autodestrukcyjne, impulsywność stwarzająca potencjalne zagrożenie
+              np. w sferze seksualnej czy związanej z wydatkami</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
   </main>
 
 
 
 
 
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="./src/slicksetting.js"></script>
 
   <script type="module" src="/src/main.ts"></script>
 </body>

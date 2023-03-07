@@ -1,0 +1,69 @@
+@use './colors' as c;
+
+section {
+	padding-top: 2em;
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 1400px;
+	width: 100%;
+}
+
+.section-heading {
+	position: relative;
+	margin: 0 auto;
+	padding: 0.4em 0.5em;
+	font-size: 2.8rem;
+	max-width: 250px;
+	text-align: center;
+	color: c.$dark;
+	font-family: 'Cormorant Upright', serif;
+	font-weight: normal;
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 20%;
+	}
+	&::before {
+		left: 50%;
+		transform: translateX(-50%);
+		bottom: 0;
+		border-bottom: 2px solid c.$brown-color;
+	}
+}
+
+.hero-graphic {
+	position: relative;
+	height: 600px;	
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+    h3{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: c.$white-color;
+        z-index: 1;
+        text-transform: uppercase;
+        font-size: 4rem;
+        text-shadow: 0 0 10px #000;
+        letter-spacing: 3px;
+    }
+}
+
+.hero-graphic::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);   
+}
+
+.bold{
+    font-weight: bold;
+}
