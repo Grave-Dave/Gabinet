@@ -48,7 +48,8 @@ section {
         color: c.$white-color;
         z-index: 1;
         text-transform: uppercase;
-        font-size: 4rem;
+        text-align: center;
+        font-size: 2.8rem;
         text-shadow: 0 0 10px #000;
         letter-spacing: 3px;
     }
@@ -66,4 +67,12 @@ section {
 
 .bold{
     font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .hero-graphic {
+        h3{
+            font-size: 4rem;
+        }
+    }
 }
