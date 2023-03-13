@@ -76,3 +76,33 @@ section {
         }
     }
 }
+
+.go-up-arrow {
+	position: fixed;
+	right: 0;
+	bottom: 125px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1em;
+	width: 30px;
+	height: 30px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+	z-index: 100;
+	font-size: 2.2rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+	text-decoration: none;
+	color: c.$white-color;
+}
+
+.visible{
+    opacity: 1;
+}
+
+.show{
+	display: flex !important;
+	animation: drive-left 2s ease;
+}
