@@ -46,7 +46,7 @@ body {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	z-index: 10;
+	z-index: 150;
 	&::after {
 		content: '';
 		position: absolute;
@@ -140,7 +140,7 @@ body {
 		padding: 0.5em 2em;
 		margin-right: 2em;
 		text-transform: uppercase;
-		font-size: 1.8rem;
+		font-size: 1.6rem;
 		text-decoration: none;
 		color: c.$white-color;
 		transition: color 0.2s;
@@ -153,7 +153,7 @@ body {
 		margin-left: 4em;
 		padding-left: 2em;
 		font-family: 'Cormorant SC', serif;
-		font-size: 1.4rem;
+		font-size: 1.2rem;
 		opacity: 0.75;
 		&::after {
 			content: '';
@@ -169,22 +169,42 @@ body {
 .nav-mobile {
 	position: fixed;
 	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
 	z-index: 10;
-	padding: 2em 0;
+	padding: 0;
 	overflow: hidden;
+	transition: background-color 0.4s;
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		filter: blur(8px);
+		z-index: -1;
+		transition: background-color .4s;
+	}
 	button {
 		align-self: flex-end;
 		padding: 2em;
+	}
+	.nav_heading {
+		margin-left: 1em;
+		font-size: .95rem;
+		width: 60%;
+		opacity: 0;
+		transition: opacity 0.3s;
 	}
 	.nav_items {
 		display: none;
 		flex-direction: column;
 		justify-content: space-evenly;
-		background-color: rgba(0, 0, 0, 0.8);
+		background-color: rgba(0, 0, 0, 0.7);
 		width: 100%;
-		height: calc(100vh - 87px);
+		height: calc(100vh - 67px);
 		overflow: hidden;
 		a {
 			display: flex;
@@ -198,11 +218,20 @@ body {
 		}
 	}
 }
+.nav-mobile.fixed {
+	background-color: rgba(0, 0, 0, 0.5);
+	&::after {		
+		background-color: rgba(78, 79, 87, 0.8);
+	}
+	.nav_heading {
+		opacity: 1;
+	}
+}
 
 .nav-fixed {
 	position: fixed;
 	padding: 1em 0;
-	background-color: rgba(0, 0, 0, 0.7);
+	background-color: rgba(0, 0, 0, 0.8);
 	box-shadow: rgba(0, 0, 0, 0.75) 0px -10px 20px 18px;
 	z-index: 100;
 	animation: fade-in-down 0.5s;
@@ -304,31 +333,31 @@ body {
 				margin-bottom: 0.5em;
 				letter-spacing: 0.03em;
 			}
-            p {
-                letter-spacing: 0.05em;
-                line-height: 150%;
-            }
+			p {
+				letter-spacing: 0.05em;
+				line-height: 150%;
+			}
 			p::after {
 				position: absolute;
 				top: 70%;
 				left: 50%;
-                transform: translate(-50%, -50%);
+				transform: translate(-50%, -50%);
 				height: 100%;
 				width: 40%;
-                z-index: -1;
-                opacity: .1;
+				z-index: -1;
+				opacity: 0.1;
 			}
-
 		}
-        .text-card:first-child p::after{
-            content: url('../img/user-solid.svg');
-        }
-        .text-card:nth-child(2) p::after{
-            content: url('../img/graduation-cap-solid.svg');
-        }
-        .text-card:last-child p::after{
-            content: url('../img/handshake-angle-solid.svg');
-        }
+		.text-card:first-child p::after {
+			content: url('../img/user-solid.svg');
+			width: 30%;
+		}
+		.text-card:nth-child(2) p::after {
+			content: url('../img/graduation-cap-solid.svg');
+		}
+		.text-card:last-child p::after {
+			content: url('../img/handshake-angle-solid.svg');
+		}
 		.text-card:last-child {
 			margin-bottom: 0;
 		}
@@ -435,9 +464,9 @@ body {
 			cursor: pointer;
 			transition: box-shadow 0.3s;
 		}
-		.offer_area:hover {
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-		}
+		// .offer_area:hover {
+		// 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+		// }
 
 		p {
 			padding: 1em;
@@ -447,12 +476,11 @@ body {
 			text-align: justify;
 			border: 1px solid rgba(0, 0, 0, 0.5);
 			border-radius: 10px;
-			// background-color: c.$white-color;
-			background-color: c.$brown-color;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
-			opacity: 0.5;
+			background-color: c.$white-color;
+			box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+			opacity: 0;
 			order: 1;
-			animation: fade-in-right 2s ease forwards;
+			transition: box-shadow 0.3s, background-color 0.3s;
 		}
 	}
 	&_cards {
@@ -475,6 +503,7 @@ body {
 			background-color: c.$white-color;
 			line-height: 160%;
 			letter-spacing: 1px;
+			opacity: 0;
 			transition: box-shadow 0.3s, background-color 0.3s, transform 0.5s;
 			h4 {
 				font-weight: 400;
@@ -513,6 +542,7 @@ body {
 	}
 	&_phone {
 		@include contact-items;
+		letter-spacing: 1px;
 		i {
 			@include contact-icon;
 		}
@@ -601,11 +631,11 @@ footer {
 	}
 	.contact {
 		&_phone {
-			font-size: 2rem;
+			font-size: 1.7rem;
 		}
 		&_location-box {
 			.location-item {
-				font-size: 2rem;
+				font-size: 1.6rem;
 			}
 		}
 	}

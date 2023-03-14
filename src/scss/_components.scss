@@ -36,23 +36,23 @@ section {
 
 .hero-graphic {
 	position: relative;
-	height: 600px;	
+	height: 600px;
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-    h3{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        color: c.$white-color;
-        z-index: 1;
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2.8rem;
-        text-shadow: 0 0 10px #000;
-        letter-spacing: 3px;
-    }
+	h3 {
+		position: absolute;
+		top: 40%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		color: c.$white-color;
+		z-index: 1;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 2.8rem;
+		text-shadow: 0 0 10px #000;
+		letter-spacing: 3px;
+	}
 }
 
 .hero-graphic::after {
@@ -62,19 +62,19 @@ section {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.5);   
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
-.bold{
-    font-weight: bold;
+.bold {
+	font-weight: bold;
 }
 
 @media (min-width: 768px) {
-    .hero-graphic {
-        h3{
-            font-size: 4rem;
-        }
-    }
+	.hero-graphic {
+		h3 {
+			font-size: 4rem;
+		}
+	}
 }
 
 .go-up-arrow {
@@ -92,17 +92,100 @@ section {
 	border-top-left-radius: 5px;
 	z-index: 100;
 	font-size: 2.2rem;
-    opacity: 0;
-    transition: opacity 0.3s;
+	opacity: 0;
+	transition: opacity 0.3s;
 	text-decoration: none;
 	color: c.$white-color;
 }
 
-.visible{
-    opacity: 1;
+.visible {
+	opacity: 1;
 }
 
-.show{
+.visible-left {
+	animation: fade-in-left 1s ease forwards;
+}
+.visible-right {
+	animation: fade-in-right 1s ease forwards;
+}
+
+.show {
 	display: flex !important;
-	animation: drive-left 2s ease;
+	animation: drive-left 0.3s ease;
+}
+
+.distinguish {
+	background-color: c.$brown-color !important;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7) !important;
+}
+
+.visible-animation {
+	animation: visible 0.4s ease forwards;
+}
+
+.nav-active {
+	color: c.$brown-color !important;
+}
+
+.cookie-box {
+	position: fixed;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%);
+	width: 100%;
+	max-width: 550px;
+	min-width: 300px;
+	height: 150px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+	padding: 1em;
+	color: c.$dark;
+	background-color: c.$white-color;
+	box-shadow: 0 0 25px #000;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	z-index: 999;
+	animation: cookie 1s ease;
+	background-image: url('../img/6-04.jpg');
+	background-size: contain;
+	background-position: right;
+	background-repeat: no-repeat;
+	background-color: #facc81;
+
+	p {
+		font-size: 1.6rem;
+		font-weight: bold;
+		text-align: center;
+		letter-spacing: 1px;
+		color: white;
+		text-shadow: 0 0 5px #000;
+	}
+	button {
+		padding: 0.75em 1.5em;
+		border-radius: 10px;
+		border: none;
+		background-color: rgb(104, 66, 12);
+		color: white;
+		text-transform: uppercase;
+		font-weight: bold;
+		cursor: pointer;
+		transition: background-color 0.2s;
+	}
+	button:hover {
+		background-color: rgb(149, 93, 15);
+	}
+
+}
+.shadow {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(5px);
+	z-index: 200;
 }
